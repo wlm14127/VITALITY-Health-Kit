@@ -61,8 +61,6 @@ def measure_heart_rate(m, heart_rate_data, min_distance):
         if len(valid_intervals) > 0:
             heart_rate = sample_frequency * 60 / np.mean(valid_intervals)
             heart_rate_data += [heart_rate]
-        else:
-            print("No valid peaks found. Unable to calculate heart rate.")
         
         # Update the threshold_factor based on the characteristics of the signal
         if len(valid_intervals) > 0:
@@ -87,16 +85,18 @@ def calculate_heart_rate(heart_rate_data):
 
     # Calculate the mean of the data
     mean_hr = np.mean(hr_data)
-    print("Mean heart rate:", round(mean_hr, 2), "bpm")
     
     return mean_hr
 
 
 def measure_temperature(count, temp_data):
+    #measures the users temperature 800 times
     for i in range(800):
+        #finds the address of the infrared temperatrue sensor and takes the value of the user's temperature
         bus = SMBus(1)
         sensor = MLX90614(bus, address=0x5A)
         temp = sensor.get_object_2()
+        #does not count the temperature if it is outside the range of 33-41°C because it is likely anamolous
         if temp < 41 and temp > 33:
             temp_data += sensor.get_object_2()
             count += 1
@@ -105,10 +105,10 @@ def measure_temperature(count, temp_data):
         time.sleep(0.01)
 
     if count > 0:
-        print("Mean body temperature:", round(temp_data/count, 2), "°C")
+        #calculates the mean of the users temperature and returns it
         return round(temp_data/count, 2)
     else:
-        print("Failed")
+        #if the all teh results were anamalous, -1 is returned
         return -1
 
 #displays the text on the LCD screen
@@ -131,6 +131,7 @@ def checkCharacter(char):
         
     return char
 
+#allows the user to press the button to move onto the next step of the program
 def cont(flag, message, length):
     displayText("Press button 1  to continue.")
 
@@ -140,7 +141,6 @@ def cont(flag, message, length):
         if GPIO.input(button1pin) == GPIO.HIGH:
             flag= True
             if message != "n/a":
-                print("hi")
                 displayText(message)
     
     return flag
@@ -176,11 +176,11 @@ def firstName(char, name, flag):
         char = 64
         
     if GPIO.input(button1pin)==GPIO.HIGH and GPIO.input(button2pin)==GPIO.HIGH: #checks if the first and second button is high
-        time.sleep(2)
+        time.sleep(2) #user has to press the buttons for two seconds to submit the whole name
         if GPIO.input(button1pin)==GPIO.HIGH and GPIO.input(button2pin)==GPIO.HIGH:
             lcd.clear()
-            char = 65
             time.sleep(0.5)
+            #allows the loop to be broken
             flag = True
     
     return char, name, flag
@@ -251,15 +251,16 @@ while not valid:
         
 raw_data = []
 heart_rate_data = []
-#heart_rate_data, raw_data = measure_heart_rate(m, heart_rate_data, min_distance)
-#mean_hr = calculate_heart_rate(heart_rate_data)
-#displayText("Measurement     complete.")
-#time.sleep(2)
-#lcd.clear()
-#lcd.message(f"Heart rate:\n{round(mean_hr, 2)} bpm")
+heart_rate_data, raw_data = measure_heart_rate(m, heart_rate_data, min_distance)
+mean_hr = calculate_heart_rate(heart_rate_data)
+displayText("Measurement     complete.")
+time.sleep(2)
+lcd.clear()
+lcd.message(f"Heart rate:\n{round(mean_hr, 2)} bpm")
 
-#user = "HeartRates" + first_name
-#r.lpush(user, round(mean_hr, 2))
+#puts the user's heart rate onto the database
+user = "HeartRates" + first_name
+r.lpush(user, round(mean_hr, 2))
 
 time.sleep(2)
 
@@ -283,6 +284,7 @@ valid = False
 while not valid:
     temp_data = measure_temperature(count, temp_data)
     print(temp_data)
+    #if the measurement failed, the temperature is continuously recorded until it doesn't fail
     if temp_data == -1:
         displayText("Measurement     failed.")
         time.sleep(2)
@@ -298,9 +300,11 @@ while not valid:
         lcd.message(f"Temperature:\n{temp_data} degrees C")
         valid = True
 
+#puts the user's temperature onto the database
 user = "Temperatures" + first_name
 RecentHeartRate = r.lpush(user, temp_data)
 
+#sends an email to the user with there results with the report
 mail = mt.Mail(
     sender=mt.Address(email="mailtrap@demomailtrap.com", name="Mailtrap Test"),
     to=[mt.Address(email="healthkit841@gmail.com")],
