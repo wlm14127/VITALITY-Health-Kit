@@ -302,7 +302,7 @@ while not valid:
 
 #puts the user's temperature onto the database
 user = "Temperatures" + first_name
-RecentHeartRate = r.lpush(user, temp_data)
+r.lpush(user, temp_data)
 
 #sends an email to the user with there results with the report
 mail = mt.Mail(
