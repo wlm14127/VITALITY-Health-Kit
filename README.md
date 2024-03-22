@@ -7,5 +7,5 @@ Please note that our website code is on a separate repository. You can access it
 ## Demonstration
 
 We've produced **two videos** to showcase our product - one product presentation, and one product demonstration. See the individual video descriptions for more information.
-- **Presentation**: https://youtu.be/ArnmDP1UDow (5:24)
+- **Presentation**: https://youtu.be/JSPP-vRDMSc (5:00)
 - **Demonstration**: https://youtu.be/Cn0MguxYPTU (4:43)
