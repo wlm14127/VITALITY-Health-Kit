@@ -307,7 +307,7 @@ r.lpush(user, temp_data)
 #sends an email to the user with there results with the report
 mail = mt.Mail(
     sender=mt.Address(email="mailtrap@demomailtrap.com", name="Mailtrap Test"),
-    to=[mt.Address(email="-enter your email address here-")],
+    to=[mt.Address(email="healthkiit841@gmail.com")],
     subject="Health Kit Results",
     text="Here are your most recent health kit results. The full report is attached. \nHeart Rate: " + str(round(mean_hr, 2)) + " bpm\nTemperature: " + str(temp_data) + "°C",
 )
