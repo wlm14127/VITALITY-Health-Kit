@@ -1,1 +1,1 @@
-# AI-Health-Kit
+# VITALITY-Health-Kit
