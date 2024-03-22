@@ -2,7 +2,7 @@
 
 Welcome to **Vitality HealthKit** - built by **Tech Titans, from King Edward VI Grammar School (Chelmsford)**. You can view our code within the 'Health Kit' folder. In order to run the code, please follow the instructions provided within the build guide (linked in our submission form).
 
-**PLEASE NOTE: This repository only contains code for our device interfacer, as well as the report generator. To view our website code, please see: https://github.com/ManasGK/Vitality-Health-Kit-Website.**
+Please note that our website code is on a separate repository. You can access it here: https://github.com/ManasGK/Vitality-Health-Kit-Website.
 
 ## Demonstration
 
