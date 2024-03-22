@@ -4,6 +4,6 @@ Welcome to Vitality HealthKit. You can view our code within the 'Health Kit' fol
 
 ## Demonstration
 
-We've produced two videos to showcase our product - one product presentation, and one product demonstration.
-- Presentation:  | https://youtu.be/ArnmDP1UDow
-- Demonstration: | https://youtu.be/Cn0MguxYPTU
+We've produced **two videos** to showcase our product - one product presentation, and one product demonstration.
+- **Presentation**: https://youtu.be/ArnmDP1UDow
+- **Demonstration**: https://youtu.be/Cn0MguxYPTU
