@@ -1,6 +1,6 @@
 ## Welcome
 
-Welcome to Vitality HealthKit. You can view our code within the 'Health Kit' folder. In order to run the code, follow the instructions provided within the build guide.
+Welcome to Vitality HealthKit. You can view our code within the 'Health Kit' folder. In order to run the code, please follow the instructions provided within the build guide.
 
 ## Demonstration
 
