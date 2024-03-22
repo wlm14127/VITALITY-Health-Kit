@@ -1,6 +1,6 @@
 ## Welcome
 
-Welcome to **Vitality HealthKit** - built by Tech Titans, from King Edward VI Grammar School (Chelmsford). You can view our code within the 'Health Kit' folder. In order to run the code, please follow the instructions provided within the build guide.
+Welcome to **Vitality HealthKit** - built by **Tech Titans, from King Edward VI Grammar School (Chelmsford)**. You can view our code within the 'Health Kit' folder. In order to run the code, please follow the instructions provided within the build guide.
 
 ## Demonstration
 
