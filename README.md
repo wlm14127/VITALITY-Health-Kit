@@ -1,1 +1,3 @@
-# VITALITY-Health-Kit
+## Welcome
+
+Welcome to Vitality HealthKit.
