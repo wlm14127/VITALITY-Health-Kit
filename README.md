@@ -10,4 +10,4 @@ We've produced **two videos** to showcase our product - one product presentation
 - **Presentation**: https://youtu.be/JSPP-vRDMSc (5:00)
 - **Demonstration**: https://youtu.be/Cn0MguxYPTU (4:43)
 
-Please note that **closed captions** are available for both videos - enable them for the best experience.
+**Closed captions** are available for both videos.
