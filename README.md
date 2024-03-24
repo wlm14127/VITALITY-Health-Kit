@@ -9,3 +9,4 @@ Please note that our website code is on a separate repository. You can access it
 We've produced **two videos** to showcase our product - one product presentation, and one product demonstration. See the individual video descriptions for more information.
 - **Presentation**: https://youtu.be/JSPP-vRDMSc (5:00)
 - **Demonstration**: https://youtu.be/Cn0MguxYPTU (4:43)
+Please note that captions are available for both videos.
